@@ -79,7 +79,7 @@ public class ProdProjectSecurityConfig {
                        .requestMatchers("/myCards").hasAuthority("VIEWCARDS")*/
                         .requestMatchers("/myAccount").hasRole("USER")//accepts single authority
                         .requestMatchers("/myBalance").hasAllRoles("USER", "ADMIN")//accept multiple authority
-                        .requestMatchers("/myLoans").hasRole("USER")
+                        .requestMatchers("/myLoans").authenticated()
                         .requestMatchers("/myCards").hasRole("USER")
                         .requestMatchers("/user").authenticated()
                         .requestMatchers("/register", "/notices", "/contact", "/error", "/invalidSession","/apiLogin")
